@@ -2,7 +2,7 @@
 	position: relative;
 	top: 100px;
 	width: 300px;
-	padding: 10px;
+	padding: 15px;
 	margin: 0 auto 0;
 	border-radius: 10px;
 	background: #ddd;
@@ -15,10 +15,7 @@
 
 .iq-login-form .iq-field {
 	display: block;
-	width: 90%;
+	box-sizing: border-box;
+	width: 100%;
 	margin: 0 auto 10px;
-}
-
-.iq-login-form .iq-button {
-	margin-left: 5%;
 }
