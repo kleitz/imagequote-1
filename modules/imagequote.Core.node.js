@@ -18,12 +18,12 @@ App.prototype.init = function () {
     this.router = new Router({
         "CONFIG": this.CONFIG
     });
-    // this.dbConnection = mysql.createConnection({
-    //     host: this.CONFIG.DB_HOST,
-    //     user: this.CONFIG.DB_USER,
-    //     password: this.CONFIG.DB_PASSWORD,
-    // });
-    // this.dbConnection.query("USE " + this.CONFIG.DB_NAME);
+    this.dbConnection = mysql.createConnection({
+        host: this.CONFIG.DB_HOST,
+        user: this.CONFIG.DB_USER,
+        password: this.CONFIG.DB_PASSWORD,
+    });
+    this.dbConnection.query("USE " + this.CONFIG.DB_NAME);
 };
 
 App.prototype.onRequest = function (server, request, response) {
