@@ -1,1 +1,1 @@
-console.log("Test server.js");
+console.log(process.env);
