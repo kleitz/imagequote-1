@@ -9,8 +9,8 @@ var CONFIG = {
 };
 
 //if running on Openshift server
-if (process.env.OPENSHIFT_INTERNAL_PORT) {
-    CONFIG.PORT = process.env.OPENSHIFT_INTERNAL_PORT;
+if (process.env.OPENSHIFT_NODEJS_PORT) {
+    CONFIG.PORT = process.env.OPENSHIFT_NODEJS_PORT;
     CONFIG.DB_HOST = "127.3.122.2:3306";
 }
 
