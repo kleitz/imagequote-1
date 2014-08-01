@@ -1,7 +1,8 @@
 var sys = require("sys"),
     path = require("path"),
     url = require("url"),
-    filesys = require("fs");
+    filesys = require("fs"),
+    mime = require("mime");
 
 function App (options) {
 	options = options || {};
@@ -29,7 +30,8 @@ App.prototype.init = function () {
 App.prototype.onRequest = function (server, request, response) {
 	var self = this,
 		requestPath = url.parse(request.url).pathname,
-        fullPath;
+        fullPath,
+        type;
 
     if (requestPath === "/") {
         requestPath += "index.html";
@@ -48,7 +50,8 @@ App.prototype.onRequest = function (server, request, response) {
 	                     response.write(err + "\n");  
 	                     response.end();
 	                 } else {
-	                    response.writeHeader(200);  
+                        type = mime.lookup(fullPath);
+                        response.writeHead( 200, { "Content-Type" : type } );
 	                    response.write(file, "binary");  
 	                    response.end();
 	                }
