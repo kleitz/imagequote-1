@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Image Quote</title>
+    <link rel="stylesheet" type="text/css" href="css/pure-min.css" />
     <link rel="stylesheet" type="text/css" href="css/common.css" />
     <link rel="stylesheet" type="text/css" href="css/Imagequote/footer.css" />
     <link rel="stylesheet" type="text/css" href="css/Imagequote/login.css" />
-    <script src="js/lib/underscore/underscore-min.js"></script>
     <script src="js/lib/jquery/jquery-2.1.1.min.js"></script>
-    <script src="js/lib/backbone/backbone-min.js"></script>
+    <script src="js/lib/angularJS/angular.min.js"></script>
     <script src="js/common.js"></script>
 </head>
 <body>
@@ -16,10 +16,13 @@
         <section class="iq-content">
             <div class="iq-login-form-wrap">
                 <h2 class="iq-login-head">Login to Image Quote</h2>
-                <form class="iq-login-form" name="login-form" action="/login" method="post">
+                <form class="iq-login-form pure-form" name="login-form" action="/login" method="post">
                     <input type="text" id="iq-login-input" class="iq-field" name="login" placeholder="Login" maxlength="32" />
                     <input type="password" id="iq-password-input" class="iq-field" name="password" placeholder="Password" maxlength="32" />
-                    <button class="iq-button" type="submit">Login</button>
+                    <label for="remember" class="pure-checkbox">
+                        <input id="remember" name="remember" type="checkbox"> Remember me
+                    </label>
+                    <button class="pure-button pure-button-primary" type="submit">Login</button>
                 </form>
             </div>
         </section>
